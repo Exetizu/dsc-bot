@@ -13,7 +13,7 @@ var postacie = new jsoning("postacie.json");
 let fullsplit = []
 client.on("ready", () => 
 {
-    client.user.setActivity("Mentorinkiego 👀", { type: "WATCHING" })
+    client.user.setActivity("Kopo 👀", { type: "WATCHING" })
     powiadomienia(client)
     memberCount(client)
     ReactionRole(client)
