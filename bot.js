@@ -13,28 +13,16 @@ var postacie = new jsoning("postacie.json");
 let fullsplit = []
 client.on("ready", () => 
 {
-    client.user.setActivity("Mentorinkiego 👀", { type: "WATCHING" })
+    client.user.setActivity("Kopo 👀", { type: "WATCHING" })
     powiadomienia(client)
     memberCount(client)
     ReactionRole(client)
-    memberCount(client)
-    console.log("**Bot gotowy**");
-    (async () =>
-    {
-        var a = await dataRole.all()
-        var aa = JSON.stringify(a)
-        let aa1 = aa.replace(/"/g, "")
-        let aa2 = aa1.replace(/{/g, "")
-        let aa3 = aa2.replace(/}/g, "")
-        let splitdata = aa3.split(",") 
-        for (var i = 0; i < splitdata.length; i++)
-        {
-            let split = splitdata[i].split(":")
-            fullsplit.push(split[0])
-            fullsplit.push(split[1])
-        }
-        // console.log(fullsplit)
-    })();
+    console.log(`
+//////////////////////////////////////////
+/           Powiadomienia             /✔️/
+/           Licznik graczy            /✔️/
+/           Reaction role             /✔️/
+//////////////////////////////////////////`);
 })
 client.on('message', (message) =>
 {
