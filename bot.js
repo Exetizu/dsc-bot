@@ -885,3 +885,29 @@ function maincommand(arguments, message)
 }
 
 
+/*///////////////////komendy lista
+let commands
+if (guild) {
+  commands = guild.commands
+} else {
+  commands = client.application?.commands
+}
+
+commands?.create({
+    name: 'add',
+    description: 'Adds two numbers',
+    options: [
+      {
+        name: 'number1',
+        description: 'The first number.',
+        required: true,
+        type: DiscordJS.Constants.ApplicationCommandOptionTypes.NUMBER,
+      },
+      {
+        name: 'number2',
+        description: 'The second number.',
+        required: true,
+        type: DiscordJS.Constants.ApplicationCommandOptionTypes.NUMBER,
+      },
+    ],
+  })*/
