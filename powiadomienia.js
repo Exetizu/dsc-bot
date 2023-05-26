@@ -9,6 +9,24 @@
                 var user = client.users.cache.find(user => user.id == newMember)
                 target.send(user.username + " wszedł na twoją poczekanię.");
             }
+            //////////////////////////////tobi 
+            else if (newUserChannel === "801174476666306600") {
+                var target = client.users.cache.find(user => user.id == "710185038414872626")
+                var user = client.users.cache.find(user => user.id == newMember)
+                target.send(user.username + " wszedł na twoją poczekanię.");
+            }
+            //////////////////////////////wodzu 
+            else if (newUserChannel === "787342292272283668") {
+                var target = client.users.cache.find(user => user.id == "731841596261400618")
+                var user = client.users.cache.find(user => user.id == newMember)
+                target.send(user.username + " wszedł na twoją poczekanię.");
+            }
+            //////////////////////////////Wujek   
+            else if (newUserChannel === "808357475233169438") {
+                var target = client.users.cache.find(user => user.id == "401444051221479426")
+                var user = client.users.cache.find(user => user.id == newMember)
+                target.send(user.username + " wszedł na twoją poczekanię.");
+            }
             //////////////////////////////pomoc
             else if (newUserChannel === "769554838928228364") {
                 var user = client.users.cache.find(user => user.id == newMember)

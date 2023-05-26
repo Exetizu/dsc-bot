@@ -1,4 +1,5 @@
 ﻿const Discord = require("discord.js")
+^X
 const client = new Discord.Client({ partials: ['MESSAGE', 'CHANNEL', 'REACTION'] });
 const memberCount = require('./member-count')
 const ReactionRole = require('./reaction-role')
@@ -9,7 +10,6 @@ var jsoning = require('jsoning');
 var dataRole = new jsoning("dataRole.json");
 var dataPoints = new jsoning("dataPoints.json");
 var dataWarn = new jsoning("dataWarn.json");
-var postacie = new jsoning("postacie.json");
 let fullsplit = []
 client.on("ready", () => 
 {
@@ -89,14 +89,10 @@ function processcommand(message)
         else if (primarycommand == "update") {
             updaterankcommand(arguments, message)
         }
-        else if (primarycommand == "main") {
-            maincommand(arguments, message)
-        }
         else if (primarycommand == "pomoc") {
             message.reply(`**Oto lista komend: **
             ${Config.prefix}register <nick z apex> - dodaje role związane z apexem
-            ${Config.prefix}update - aktualizuje role związane z apexem
-            ${Config.prefix}main <nazwa postaci> - ustawia maina`)
+            ${Config.prefix}update - aktualizuje role związane z apexem`)
         }
         else {
             message.reply(`Liste komend znajdziesz w ${Config.prefix}pomoc`)
@@ -799,101 +795,3 @@ function reportcommand(arguments, message) {
 
     
 }
-
-
-function maincommand(arguments, message)
-{
-    (async () =>
-    {
-        if (await postacie.has(arguments[0].toLowerCase()) == true)
-        {
-            message.member.fetch().then(ab => {
-                var ranks = ab._roles
-                var i = 0
-                var stop = 0
-                while (ranks[i] != undefined && stop == 0) {
-                    switch (ranks[i]) {
-                        case "810156796781395979":
-                            message.member.roles.remove("810156796781395979")
-                            stop++
-                            break;
-                        case "810157352262959114":
-                            message.member.roles.remove("810157352262959114")
-                            stop++
-                            break;
-                        case "810157740731006977":
-                            message.member.roles.remove("810157740731006977")
-                            stop++
-                            break;
-                        case "810160443213611008":
-                            message.member.roles.remove("810160443213611008")
-                            stop++
-                            break;
-                        case "810160601820430406":
-                            message.member.roles.remove("810160601820430406")
-                            stop++
-                            break;
-                        case "810160824924635138":
-                            message.member.roles.remove("810160824924635138")
-                            stop++
-                            break;
-                        case "810161315812343849":
-                            message.member.roles.remove("810161315812343849")
-                            stop++
-                            break;
-                        case "810161444544184410":
-                            message.member.roles.remove("810161444544184410")
-                            stop++
-                            break;
-                        case "810161593068552212":
-                            message.member.roles.remove("810161593068552212")
-                            stop++
-                            break;
-                        case "810161722483933185":
-                            message.member.roles.remove("810161722483933185")
-                            stop++
-                            break;
-                        case "810161874661408808":
-                            message.member.roles.remove("810161874661408808")
-                            stop++
-                            break;
-                        case "810161989355438122":
-                            message.member.roles.remove("810161989355438122")
-                            stop++
-                            break;
-                        case "810162113804369943":
-                            message.member.roles.remove("810162113804369943")
-                            stop++
-                            break;
-                        case "810162231706124288":
-                            message.member.roles.remove("810162231706124288")
-                            stop++
-                            break;
-                        case "810162523600977981":
-                            message.member.roles.remove("810162523600977981")
-                            stop++
-                            break;
-                        case "810162666421092392":
-                            message.member.roles.remove("810162666421092392")
-                            stop++
-                            break;
-                            case "842333203229310976":
-                            message.member.roles.remove("842333203229310976")
-                            stop++
-                            break;
-                        default:
-                            i++
-                    }
-                }
-            })
-            message.member.roles.add(await postacie.get(arguments[0].toLowerCase()))
-            message.reply(`Ustawiono maina`) 
-        }
-        else
-        {
-            message.reply(`Podano złą nazwę postaci`) 
-        }
-    })();
-}
-
-
